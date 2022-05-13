@@ -1,0 +1,31 @@
+...................................................................................................
+//using function
+
+#include <bits/stdc++.h>
+#define ll long long int
+using namespace std;
+bool isprime(ll x)
+{
+    for(ll i=2; i<x; i++)
+    {
+        if(x%i==0)
+        {
+            return false;
+        }
+
+    }
+    return true;
+}
+
+int main()
+{
+    ll n;
+    cin >> n;
+    for(ll i=1; i<=n; i++)
+    {
+        if(isprime(i))
+            cout << i << " ";
+    }
+    return 0;
+}
+
