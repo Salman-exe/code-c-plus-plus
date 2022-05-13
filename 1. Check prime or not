@@ -1,0 +1,45 @@
+----------------------------------------------------------------------------------------------------------------------
+//using function and time complexity O(sqrt_n) 
+
+#include <bits/stdc++.h>
+#define ll long long int
+using namespace std;
+bool isprime(ll x)
+{
+    if(x<2)
+    {
+        return false;
+    }
+    for(ll i=2; i*i<=x; i++)
+    {
+        if(x%i==0)
+        {
+
+            return false;
+
+        }
+
+    }
+    return true;
+
+}
+
+int main()
+{
+    ll n;
+    cin >> n;
+
+    if(isprime(n))
+    {
+        cout << "prime";
+    }
+    else
+    {
+        cout << "not prime";
+    }
+
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------------
+
+
