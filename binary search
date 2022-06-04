@@ -105,7 +105,73 @@ int main()
 ...................................................................................................................................................................
 
 
+\\ lower bound
 
+#include<bits/stdc++.h>
+using namespace std;
+int get_lower_bound(vector<int>&vec, int n)
+{
+    int L = 0, R = vec.size();
+    while(L < R)
+    {
+        int M = L + (R - L) / 2;
+        if(vec[M] >= n)
+        {
+            R = M;
+        }
+        else
+        {
+            L = M + 1;
+        }
+    }
+    return L;
+}
+int main()
+{
+    vector<int> vec = {1,2,2,4,7,11,11,13};
+    int value;
+    cin >> value;
+    cout  << get_lower_bound(vec,value);     \\ (value +1) == upper bound
+    return 0;
+}
+
+
+..........................................................................................................................................
+ 
+ \\ upper bound
+ 
+ 
+ #include<bits/stdc++.h>
+using namespace std;
+int get_lower_bound(vector<int>&vec, int n)
+{
+    int L = 0, R = vec.size();
+    while(L < R)
+    {
+        int M = L + (R - L) / 2;
+        if(vec[M] > n)
+        {
+            R = M;
+        }
+        else
+        {
+            L = M + 1;
+        }
+    }
+    return L;
+}
+int main()
+{
+    vector<int> vec = {1,2,2,4,7,11,11,13};
+    int value;
+    cin >> value;
+    cout  << get_lower_bound(vec,value);   
+    return 0;
+}
+
+
+
+.......................................................................................................................................................
 
 
 
