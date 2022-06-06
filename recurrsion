@@ -1,0 +1,41 @@
+.....................................................................................................................................................
+
+// stack overflow
+
+#include <bits/stdc++.h>
+using namespace std;
+int find_factorial(int n)
+{
+    if(n == 0) return 1;
+    return (n * find_factorial(n-1));
+}
+       int main()
+{
+    int n;
+    cin >> n;
+    cout << find_factorial(n);
+    return 0;
+}
+
+
+.........................................................................................................................................................
+
+// stack overflow solve
+
+#include <bits/stdc++.h>
+using namespace std;
+int find_factorial(int n, int res = 1)
+{
+    if(n == 0) return res;
+    return find_factorial(n-1, n * res);
+}
+int main()
+{
+    int n;
+    cin >> n;
+    cout << find_factorial(n);
+    return 0;
+}
+
+
+..........................................................................................................................................................
